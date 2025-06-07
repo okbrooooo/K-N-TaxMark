@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K&N TaxMark Advisors – Tax Planning, ITR Filing, GST & Brand Protection</title>
+  <meta name="description"
+    content="K&N TaxMark Advisors - Expert Tax Planning, ITR Filing, GST, Trademark, and Business Advisory services." />
+  <meta name="author" content="K&N TaxMark Advisors" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* CSS Variables for theme */
+    :root {
+      --color-primary: #004a99;
+      --color-primary-light: #0077cc;
+      --color-secondary: #00aaff;
+      --color-accent: #28a745;
+      --color-accent-dark: #1e7e34;
+      --color-bg: #f5f8fc;
+      --color-text-primary: #222;
+      --color-text-secondary: #555;
+      --color-white: #fff;
+      --border-radius: 12px;
+      --transition-speed: 0.3s;
+      --max-width: 1100px;
+      --shadow-light: rgba(0, 0, 0, 0.1);
+      --shadow-strong: rgba(0, 0, 0, 0.15);
+    }
+
+    /* Reset & base */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: var(--color-secondary);
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--color-primary-light);
+      outline: none;
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    /* Header / Navigation */
+    header {
+      background: var(--color-white);
+      position: sticky;
+      top: 0;
+      z-index: 1001;
+      box-shadow: 0 3px 8px var(--shadow-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--color-primary);
+      letter-spacing: 1px;
+      user-select: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 3px;
+      background-color: var(--color-secondary);
+      transition: width var(--transition-speed);
+      border-radius: 3px;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    /* Hamburger menu - mobile */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 26px;
+      height: 20px;
+      justify-content: space-between;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      color: var(--color-white);
+      text-align: center;
+      padding: 100px 20px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 0.5em;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.1;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-primary {
+      background-color: var(--color-accent);
+      color: var(--color-white);
+      border: none;
+      padding: 16px 42px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+      transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: var(--color-accent-dark);
+      box-shadow: 0 8px 25px rgba(30, 126, 52, 0.8);
+      outline: none;
+    }
+
+    /* Quick Services Section */
+    .quick-services {
+      background-color: var(--color-white);
+      padding: 35px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      max-width: var(--max-width);
+      margin: -60px auto 60px; /* Pull up to overlap hero */
+      box-shadow: 0 4px 20px var(--shadow-light);
+      border-radius: var(--border-radius);
+      position: relative;
+      z-index: 10;
+    }
+
+    .service-box {
+      background: var(--color-primary);
+      color: var(--color-white);
+      flex: 1 1 160px;
+      max-width: 220px;
+      border-radius: var(--border-radius);
+      padding: 28px 20px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 18px rgba(0, 74, 153, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+      user-select: none;
+    }
+
+    .service-box i {
+      font-size: 1.8rem;
+    }
+
+    .service-box:hover,
+    .service-box:focus {
+      background-color: var(--color-secondary);
+      box-shadow: 0 12px 30px rgba(0, 170, 255, 0.6);
+      transform: translateY(-8px);
+      outline: none;
+    }
+
+    /* Section Titles */
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 28px;
+      color: var(--color-primary);
+      font-weight: 700;
+      letter-spacing: 1.7px;
+    }
+
+    /* About Section */
+    #about {
+      max-width: 800px;
+      margin: 0 auto 70px;
+      padding: 0 20px;
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+      text-align: center;
+      user-select: text;
+    }
+
+    /* Services Section */
+    #services {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+    }
+
+    .service-card {
+      background: var(--color-white);
+      border-radius: var(--border-radius);
+      padding: 28px 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px var(--shadow-light);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .service-card:hover,
+    .service-card:focus-within {
+      box-shadow: 0 12px 40px var(--shadow-strong);
+      outline: none;
+    }
+
+    .service-card h3 {
+      color: var(--color-primary);
+      margin-bottom: 14px;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    .service-card p {
+      color: var(--color-text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.55;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: var(--color-white);
+      max-width: 500px;
+      margin: 0 auto 60px;
+      padding: 50px 30px 60px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 12px 35px var(--shadow-light);
+    }
+
+    #contact h2 {
+      margin-bottom: 30px;
+      color: var(--color-primary);
+      text-align: center;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    #contact p {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      color: var(--color-primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      user-select: text;
+    }
+
+    #contact p a {
+      color: var(--color-secondary);
+      font-weight: 600;
+    }
+
+    #contact p a:hover,
+    #contact p a:focus {
+      color: var(--color-primary-light);
+      text-decoration: underline;
+      outline: none;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 14px 18px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      resize: vertical;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 10px rgba(0, 74, 153, 0.3);
+    }
+
+    /* Validation message */
+    input:invalid,
+    select:invalid,
+    textarea:invalid {
+      border-color: #dc3545;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #999;
+    }
+
+    button[type='submit'] {
+      background-color: var(--color-accent);
+      border: none;
+      padding: 16px 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-white);
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 7px 22px rgba(40, 167, 69, 0.65);
+      transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+      user-select: none;
+    }
+
+    button[type='submit']:hover,
+    button[type='submit']:focus {
+      background-color: var(--color-accent-dark);
+      box-shadow: 0 9px 28px rgba(30, 126, 52, 0.85);
+      outline: none;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 30px auto 0;
+      background-color: #25d366;
+      color: var(--color-white);
+      padding: 14px 30px;
+      font-weight: 700;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.15rem;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
+      transition: background-color var(--transition-speed);
+      user-select: none;
+      max-width: 280px;
+      text-align: center;
+    }
+
+    .whatsapp-button:hover,
+    .whatsapp-button:focus {
+      background-color: #1ebc57;
+      outline: none;
+    }
+
+    .whatsapp-button i {
+      font-size: 1.6rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+      margin-top: auto;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .quick-services {
+        max-width: 95vw;
+      }
+
+      #contact {
+        max-width: 90vw;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 18px;
+        background: var(--color-white);
+        position: fixed;
+        top: 65px;
+        right: 0;
+        width: 220px;
+        padding: 20px;
+        box-shadow: -3px 0 10px var(--shadow-strong);
+        border-radius: 0 0 0 12px;
+        height: calc(100vh - 65px);
+        z-index: 1002;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+      }
+
+      .service-box {
+        max-width: 100%;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header role="banner" class="container">
+    <div class="logo" tabindex="0">K&amp;N TaxMark Advisors</div>
+
+    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="primary-navigation" role="navigation" aria-label="Primary Navigation">
+      <a href="#about" tabindex="0">About</a>
+      <a href="#services" tabindex="0">Services</a>
+      <a href="#contact" tabindex="0">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" role="region" aria-label="Hero section">
+    <h1>Protect Your Brand &amp; Streamline Your Taxes with K&amp;N TaxMark Advisors</h1>
+    <p>Your trusted partner in Tax Planning, ITR Filing, GST Compliance, Trademark &amp; Business Advisory</p>
+    <button class="btn-primary" type="button" onclick="bookConsultation()">Book Consultation</button>
+  </section>
+
+  <section class="quick-services" aria-label="Quick Services">
+    <div class="service-box" tabindex="0"><i class="fas fa-coins" aria-hidden="true"></i> Tax Planning</div>
+    <div class="service-box" tabindex="0"><i class="fas fa-file-invoice" aria-hidden="true"></i> ITR Filing</div>
+    <div class="service-box" tabindex="0"><i class="fas fa-shield-alt" aria-hidden="true"></i> Trademark</div>
+  </section>
+
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About Us</h2>
+    <p>We help individuals and businesses legally grow their income by providing smart tax planning, ITR filing, GST compliance,
+      and brand protection services.</p>
+  </section>
+
+  <section id="services" aria-labelledby="services-title">
+    <h2 id="services-title">Our Services</h2>
+
+    <article class="service-card" tabindex="0" aria-label="Tax Planning Service">
+      <h3>Tax Planning</h3>
+      <p>Year-round strategies to save income tax legally and efficiently.</p>
+    </article>
+
+    <article class="service-card" tabindex="0" aria-label="ITR Filing Service">
+      <h3>ITR Filing</h3>
+      <p>Hassle-free filing of Income Tax Returns for salaried, business, and professionals.</p>
+    </article>
+
+    <article class="service-card" tabindex="0" aria-label="GST Filing Service">
+      <h3>GST Filing</h3>
+      <p>Monthly/quarterly GST return filing, reconciliation, and advisory.</p>
+    </article>
+
+    <article class="service-card" tabindex="0" aria-label="Trademark & Brand Protection Service">
+      <h3>Trademark & Brand Protection</h3>
+      <p>Helping businesses secure their intellectual property rights efficiently.</p>
+    </article>
+
+    <article class="service-card" tabindex="0" aria-label="Business Advisory Service">
+      <h3>Business Advisory</h3>
+      <p>Strategic advisory to help your business grow, comply, and thrive.</p>
+    </article>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title" role="region">
+    <h2 id="contact-title">Contact Us</h2>
+
+    <p><i class="fas fa-phone-alt" aria-hidden="true"></i> Phone: <a href="tel:+919999999999" aria-label="Call K and N TaxMark Advisors">+91-9999999999</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:contact@kntaxmarkadvisors.com" aria-label="Email K and N TaxMark Advisors">contact@kntaxmarkadvisors.com</a></p>
+
+    <form id="contact-form" novalidate>
+      <label for="name">Full Name <sup aria-hidden="true">*</sup></label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true" />
+
+      <label for="email">Email Address <sup aria-hidden="true">*</sup></label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true" />
+
+      <label for="service">Interested Service</label>
+      <select id="service" name="service" aria-label="Select service">
+        <option value="" selected disabled>Select a service (optional)</option>
+        <option value="tax-planning">Tax Planning</option>
+        <option value="itr-filing">ITR Filing</option>
+        <option value="gst-filing">GST Filing</option>
+        <option value="trademark">Trademark & Brand Protection</option>
+        <option value="business-advisory">Business Advisory</option>
+      </select>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+
+      <button type="submit" aria-label="Send message to K and N TaxMark Advisors">Send Message</button>
+    </form>
+
+    <a class="whatsapp-button" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i> Chat on WhatsApp
+    </a>
+  </section>
+
+  <footer role="contentinfo">
+    &copy; 2025 K&amp;N TaxMark Advisors. All rights reserved.
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('primary-navigation');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('active');
+    });
+
+    // Simple form submission handler (demo only)
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      alert(`Thank you, ${form.name.value}! Your message has been sent.`);
+      form.reset();
+    });
+
+    // Scroll to contact form on "Book Consultation"
+    function bookConsultation() {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('name').focus();
+    }
+  </script>
+</body>
+
+</html>
